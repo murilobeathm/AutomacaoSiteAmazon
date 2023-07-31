@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230728 16:34:10.010" rpa="false" schemaversion="4">
+<suite id="s1" name="Suite1" source="C:\Projetos\RobotFrameWork\ProjetoAmazonOficial\suites\suite1">
+<suite id="s1-s1" name="TC01teste" source="C:\Projetos\RobotFrameWork\ProjetoAmazonOficial\suites\suite1\TC01teste.robot">
+<kw name="Acessar o site" library="setup_teardown" type="SETUP">
+<kw name="GIVEN que o utilizador está no site da amazon" library="home_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230728 16:34:10.284" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.es/'.</msg>
+<status status="PASS" starttime="20230728 16:34:10.282" endtime="20230728 16:34:14.739"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.7</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230728 16:34:14.740" endtime="20230728 16:34:14.740"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230728 16:34:14.740" endtime="20230728 16:34:14.740"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${home.aceitar_cookie}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:14.741" level="INFO">Clicking element '//*[@id="sp-cc-accept"]'.</msg>
+<status status="PASS" starttime="20230728 16:34:14.740" endtime="20230728 16:34:16.916"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230728 16:34:16.916" endtime="20230728 16:34:18.051"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${caminho_para_scr}/imgBarraPesq.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230728 16:34:19.466" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgBarraPesq.png"&gt;&lt;img src="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgBarraPesq.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230728 16:34:18.051" endtime="20230728 16:34:19.467"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:10.282" endtime="20230728 16:34:19.467"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:10.281" endtime="20230728 16:34:19.467"/>
+</kw>
+<test id="s1-s1-t1" name="BACKGROUND" line="11">
+<kw name="GIVEN que o utilizador já selecionou o país de entrega &quot;Portugal&quot;" library="home_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${icone_ecolha do pais}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:19.470" level="INFO">Clicking element '//*[@id="nav-global-location-popover-link"]'.</msg>
+<status status="PASS" starttime="20230728 16:34:19.469" endtime="20230728 16:34:21.611"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${botao_escolha_paises}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230728 16:34:21.611" endtime="20230728 16:34:23.653"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${botao_escolha_paises}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:23.655" level="INFO">Clicking element '//*[@id="GLUXCountryListDropdown"]/span/span'.</msg>
+<status status="PASS" starttime="20230728 16:34:23.654" endtime="20230728 16:34:25.804"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pais_desejado}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:25.806" level="INFO">Clicking element '//*[@id="GLUXCountryList_5"]'.</msg>
+<status status="PASS" starttime="20230728 16:34:25.804" endtime="20230728 16:34:27.928"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:19.469" endtime="20230728 16:34:27.928"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:19.467" endtime="20230728 16:34:27.929"/>
+</test>
+<test id="s1-s1-t2" name="Cenário 1 - fazendo pesquisa" line="13">
+<kw name="GIVEN que o utilizador já digitou o nome do produto na barra de pesquisa" library="home_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${home.input_Campo_Pesquisa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:27.933" level="INFO">Clicking element '//*[@id="twotabsearchtextbox"]'.</msg>
+<status status="PASS" starttime="20230728 16:34:27.931" endtime="20230728 16:34:30.199"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${home.input_Campo_Pesquisa}</arg>
+<arg>${home.objeto_pesquisa}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:30.201" level="INFO">Typing text 'fr' into text field '//*[@id="twotabsearchtextbox"]'.</msg>
+<status status="PASS" starttime="20230728 16:34:30.199" endtime="20230728 16:34:33.342"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:27.931" endtime="20230728 16:34:33.342"/>
+</kw>
+<kw name="WHEN clica no botão para efetuar a busca" library="home_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${home.input_Botao_Pesquisa}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:33.344" level="INFO">Clicking element '//*[@id="nav-search-submit-button"]'.</msg>
+<status status="PASS" starttime="20230728 16:34:33.343" endtime="20230728 16:34:37.225"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230728 16:34:37.225" endtime="20230728 16:34:37.226"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:33.343" endtime="20230728 16:34:37.226"/>
+</kw>
+<kw name="THEN é direcionado à página “lista de resultados&quot;" library="home_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${valida}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230728 16:34:39.351" level="INFO">Element '//*[@id="search"]/span[2]/div/h1/div/div[1]/div/div/span[3]' is displayed.</msg>
+<status status="PASS" starttime="20230728 16:34:37.228" endtime="20230728 16:34:39.351"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230728 16:34:39.351" endtime="20230728 16:34:39.352"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${caminho_para_scr}/imgListaResult.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230728 16:34:40.565" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgListaResult.png"&gt;&lt;img src="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgListaResult.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230728 16:34:39.352" endtime="20230728 16:34:40.565"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:37.227" endtime="20230728 16:34:40.565"/>
+</kw>
+<tag>Pesquisa_Botão_Busca</tag>
+<status status="PASS" starttime="20230728 16:34:27.930" endtime="20230728 16:34:40.566"/>
+</test>
+<test id="s1-s1-t3" name="Cenário 2 - selecionando o produto desejado" line="19">
+<kw name="GIVEN que o utilizador está na “lista de resultados” dentro da pesquisa realizada" library="resultados_busca">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${valida_pesquisa}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230728 16:34:42.635" level="INFO">Element '//*[@id="search"]/span[2]/div/h1/div/div[1]/div/div/span[3]' is displayed.</msg>
+<status status="PASS" starttime="20230728 16:34:40.570" endtime="20230728 16:34:42.635"/>
+</kw>
+<status status="PASS" starttime="20230728 16:34:40.570" endtime="20230728 16:34:42.635"/>
+</kw>
+<kw name="WHEN o utilizador seleciona o produto" library="resultados_busca">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${escolha_produto}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:34:42.637" level="INFO">Clicking element '//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/div/div/div[2]/div[1]/h2/a/span'.</msg>
+<msg timestamp="20230728 16:34:44.829" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230728 16:34:44.829" level="FAIL">Element with locator '//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/div/div/div[2]/div[1]/h2/a/span' not found.</msg>
+<status status="FAIL" starttime="20230728 16:34:42.636" endtime="20230728 16:34:44.834"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" starttime="20230728 16:34:44.834" endtime="20230728 16:34:44.834"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:42.636" endtime="20230728 16:34:44.834"/>
+</kw>
+<kw name="THEN é direcionado à página “detalhes do produto”" library="resultados_busca">
+<status status="NOT RUN" starttime="20230728 16:34:44.836" endtime="20230728 16:34:44.836"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:40.568" endtime="20230728 16:34:44.837">Element with locator '//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/div/div/div[2]/div[1]/h2/a/span' not found.</status>
+</test>
+<doc>Os seguintes testes irão validar o inicio do ciclo
+Toda pesquisa deverá ser feita utilizando o botão de pesquisa</doc>
+<status status="FAIL" starttime="20230728 16:34:10.035" endtime="20230728 16:34:44.840"/>
+</suite>
+<suite id="s1-s2" name="TC02teste" source="C:\Projetos\RobotFrameWork\ProjetoAmazonOficial\suites\suite1\TC02teste.robot">
+<test id="s1-s2-t1" name="Cenário 1: Adicionar produtos ao carrinho" line="7">
+<kw name="GIVEN que o utilizador está na página “detalhes do produto”" library="detalhes_produto">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${valida_produto_escolhido}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230728 16:34:52.128" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230728 16:34:52.128" level="FAIL">Element '//*[@id="buy-now-button"]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230728 16:34:44.872" endtime="20230728 16:34:52.129"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:44.872" endtime="20230728 16:34:52.129"/>
+</kw>
+<kw name="WHEN o utilizador adiciona 1 produto ao carrinho" library="detalhes_produto">
+<status status="NOT RUN" starttime="20230728 16:34:52.131" endtime="20230728 16:34:52.131"/>
+</kw>
+<kw name="AND seleciona a opção “ir para o carrinho”" library="detalhes_produto">
+<status status="NOT RUN" starttime="20230728 16:34:52.132" endtime="20230728 16:34:52.132"/>
+</kw>
+<kw name="THEN é dada a opção de continuar a compra ou ir para o carrinho" library="detalhes_produto">
+<status status="NOT RUN" starttime="20230728 16:34:52.133" endtime="20230728 16:34:52.133"/>
+</kw>
+<doc>O seguinte teste deverá adicionar um produto ao carrinho</doc>
+<status status="FAIL" starttime="20230728 16:34:44.871" endtime="20230728 16:34:52.133">Element '//*[@id="buy-now-button"]' not visible after 5 seconds.</status>
+</test>
+<test id="s1-s2-t2" name="Cenário 2: Após finalização da compra o utilizador é direcionado à página de login" line="17">
+<kw name="GIVEN que já existem produtos no carrinho" library="detalhes_carrinho">
+<kw name="é dada a opção de continuar a compra ou ir para o carrinho" library="detalhes_produto">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${botao_finaliza_compra}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230728 16:34:59.376" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230728 16:34:59.376" level="FAIL">Element '//input[@data-feature-id="proceed-to-checkout-action"]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230728 16:34:52.137" endtime="20230728 16:34:59.378"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:52.137" endtime="20230728 16:34:59.378"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" starttime="20230728 16:34:59.378" endtime="20230728 16:34:59.378"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:52.136" endtime="20230728 16:34:59.378"/>
+</kw>
+<kw name="WHEN o utilizador adiciona mais um produto" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:34:59.379" endtime="20230728 16:34:59.379"/>
+</kw>
+<kw name="AND seleciona a opção “finalizar compra”" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:34:59.380" endtime="20230728 16:34:59.380"/>
+</kw>
+<kw name="THEN é direcionado à página de login" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:34:59.381" endtime="20230728 16:34:59.381"/>
+</kw>
+<doc>Para iniciar o seguinte teste deverá ter um item no carrinho</doc>
+<status status="FAIL" starttime="20230728 16:34:52.136" endtime="20230728 16:34:59.381">Element '//input[@data-feature-id="proceed-to-checkout-action"]' not visible after 5 seconds.</status>
+</test>
+<status status="FAIL" starttime="20230728 16:34:44.844" endtime="20230728 16:34:59.384"/>
+</suite>
+<suite id="s1-s3" name="TC03teste" source="C:\Projetos\RobotFrameWork\ProjetoAmazonOficial\suites\suite1\TC03teste.robot">
+<test id="s1-s3-t1" name="BACKGROUND:" line="8">
+<kw name="GIVEN que o utilizador já tem 1 produto no carrinho" library="detalhes_carrinho">
+<kw name="é direcionado à página de login" library="detalhes_carrinho">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${input_Campo_Email}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230728 16:35:06.682" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230728 16:35:06.682" level="FAIL">Element '//*[@id="ap_email"]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230728 16:34:59.413" endtime="20230728 16:35:06.683"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${caminho_para_scr}/imgLogin.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:06.683" endtime="20230728 16:35:06.683"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:59.411" endtime="20230728 16:35:06.683"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logo_do_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:06.684" endtime="20230728 16:35:06.684"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:06.684" endtime="20230728 16:35:06.684"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${icone_carrinho}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:06.684" endtime="20230728 16:35:06.684"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:59.411" endtime="20230728 16:35:06.684"/>
+</kw>
+<kw name="AND está na página do carrinho" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:35:06.685" endtime="20230728 16:35:06.685"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:34:59.410" endtime="20230728 16:35:06.686">Element '//*[@id="ap_email"]' not visible after 5 seconds.</status>
+</test>
+<test id="s1-s3-t2" name="Cenário 1: validando o idioma" line="12">
+<kw name="WHEN o utilizador clica no ícone para alterar o idioma" library="detalhes_carrinho">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${opcao_indioma}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:35:06.691" level="INFO">Clicking element '//*[@id="icp-nav-flyout"]/span/span[2]'.</msg>
+<status status="PASS" starttime="20230728 16:35:06.691" endtime="20230728 16:35:09.224"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${idioma_PT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230728 16:35:09.224" endtime="20230728 16:35:11.268"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${caminho_para_scr}/imgOpcIdioma.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230728 16:35:12.388" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgOpcIdioma.png"&gt;&lt;img src="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgOpcIdioma.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230728 16:35:11.268" endtime="20230728 16:35:12.388"/>
+</kw>
+<status status="PASS" starttime="20230728 16:35:06.690" endtime="20230728 16:35:12.388"/>
+</kw>
+<kw name="AND seleciona o idioma Português-PT" library="detalhes_carrinho">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${idioma_PT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:35:12.390" level="INFO">Clicking element '//*[@id="icp-language-settings"]/div[3]/div/label/i'.</msg>
+<status status="PASS" starttime="20230728 16:35:12.390" endtime="20230728 16:35:14.471"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${guardar_alteracoes}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:35:14.472" level="INFO">Clicking element '//*[@id="icp-save-button"]/span/input'.</msg>
+<status status="PASS" starttime="20230728 16:35:14.471" endtime="20230728 16:35:16.554"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${caminho_para_scr}/imgIdiomaPT.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230728 16:35:19.059" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgIdiomaPT.png"&gt;&lt;img src="ProjetosRobotFrameWorkProjetoAmazonOficialResults/imgIdiomaPT.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230728 16:35:16.554" endtime="20230728 16:35:19.059"/>
+</kw>
+<status status="PASS" starttime="20230728 16:35:12.390" endtime="20230728 16:35:19.059"/>
+</kw>
+<kw name="THEN o idioma da página é alterado de acordo com a opção escolhida" library="detalhes_carrinho">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${valida_texto_PT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230728 16:35:26.413" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230728 16:35:26.413" level="FAIL">Element '//*[@id="sc-active-cart"]/div/div/div/h1' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230728 16:35:19.061" endtime="20230728 16:35:26.414"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:35:19.061" endtime="20230728 16:35:26.414"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:35:06.690" endtime="20230728 16:35:26.416">Element '//*[@id="sc-active-cart"]/div/div/div/h1' not visible after 5 seconds.</status>
+</test>
+<test id="s1-s3-t3" name="Cenário 2: atualizar os itens do carrinho automaticamente" line="16">
+<kw name="WHEN o utilizador seleciona a opção “ver mais produtos como este”" library="detalhes_carrinho">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_Ver_P_ComoEste}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:35:26.420" level="INFO">Clicking element '//input[@value="Ver mais produtos como este"]'.</msg>
+<msg timestamp="20230728 16:35:28.700" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230728 16:35:28.700" level="FAIL">Element with locator '//input[@value="Ver mais produtos como este"]' not found.</msg>
+<status status="FAIL" starttime="20230728 16:35:26.420" endtime="20230728 16:35:28.701"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${caminho_para_scr}/imgProdtSemelhante.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:28.701" endtime="20230728 16:35:28.702"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:35:26.419" endtime="20230728 16:35:28.702"/>
+</kw>
+<kw name="AND adiciona 1 outro produto ao seu carrinho" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:35:28.704" endtime="20230728 16:35:28.704"/>
+</kw>
+<kw name="THEN é direcionado à página de detalhes do carrinho" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:35:28.705" endtime="20230728 16:35:28.705"/>
+</kw>
+<kw name="AND o total de itens do carrinho é atualizado automaticamente" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:35:28.705" endtime="20230728 16:35:28.705"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:35:26.418" endtime="20230728 16:35:28.706">Element with locator '//input[@value="Ver mais produtos como este"]' not found.</status>
+</test>
+<test id="s1-s3-t4" name="Cenário 3: Mensagem de aviso de carrinho vazio" line="22">
+<kw name="WHEN o utilizador exclui todos os produtos do carrinho" library="detalhes_carrinho">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${texto}</var>
+<arg>${texto_carrinho}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230728 16:35:30.961" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230728 16:35:30.961" level="FAIL">Element with locator '//*[@id="sc-active-cart"]/div/div/div/h1' not found.</msg>
+<status status="FAIL" starttime="20230728 16:35:28.709" endtime="20230728 16:35:30.963"/>
+</kw>
+<while condition="'${texto}' !='O seu carrinho da Amazon está vazio.'">
+<iter>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${input_Apagar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:30.964" endtime="20230728 16:35:30.964"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${input_Apagar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:30.965" endtime="20230728 16:35:30.965"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${texto}</var>
+<arg>${texto_carrinho}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230728 16:35:30.965" endtime="20230728 16:35:30.965"/>
+</kw>
+<status status="NOT RUN" starttime="20230728 16:35:30.963" endtime="20230728 16:35:30.965"/>
+</iter>
+<status status="NOT RUN" starttime="20230728 16:35:30.963" endtime="20230728 16:35:30.965"/>
+</while>
+<status status="FAIL" starttime="20230728 16:35:28.709" endtime="20230728 16:35:30.965"/>
+</kw>
+<kw name="THEN aperece no ecrã uma mensagem indicando que o carrinho está vazio" library="detalhes_carrinho">
+<status status="NOT RUN" starttime="20230728 16:35:30.966" endtime="20230728 16:35:30.966"/>
+</kw>
+<status status="FAIL" starttime="20230728 16:35:28.708" endtime="20230728 16:35:30.967">Element with locator '//*[@id="sc-active-cart"]/div/div/div/h1' not found.</status>
+</test>
+<doc>Os Seguintes testes validam as opções de idioma e exclusão de produtos utilizando ciclo while</doc>
+<status status="FAIL" starttime="20230728 16:34:59.388" endtime="20230728 16:35:30.970"/>
+</suite>
+<status status="FAIL" starttime="20230728 16:34:10.012" endtime="20230728 16:35:30.974"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="7" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Pesquisa_Botão_Busca</stat>
+</tag>
+<suite>
+<stat pass="2" fail="7" skip="0" id="s1" name="Suite1">Suite1</stat>
+<stat pass="2" fail="1" skip="0" id="s1-s1" name="TC01teste">Suite1.TC01teste</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s2" name="TC02teste">Suite1.TC02teste</stat>
+<stat pass="0" fail="4" skip="0" id="s1-s3" name="TC03teste">Suite1.TC03teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
